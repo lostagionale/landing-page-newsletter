@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo Stagionale</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="center-flex">
+
+    <nav class="center-flex">
+        <img src="assets/logo-v4.svg" width="300" alt="Lo Stagionale" />
+    </nav>
+
+    <div class="fixed-modal center-flex row">
+        <img src="assets/job-restaurant.jpeg" alt="" />
+        <div class="right center-flex column">
+            <h1> Trova lavoro o lavoratori stagionali in pochi click </h1>
+            <p> LoStagionale.it mette in contatto esercenti e lavoratori in modo rapido e gratuito </p>
+
+            <form class="center-flex column">
+                <div class="selector center-flex">
+                    <div class="highlight"></div>
+                    <button type="button" class="option active">Lavoratore</button>
+                    <button type="button" class="option">Azienda</button>
+                </div>
+
+                <input type="text" placeholder="Inserisci la tua email" />
+                <button type="submit"> Iscriviti ora gratuitamente </button>
+            </form>
+
+            <p> Niente spam, solo opportunità che possono davvero interessarti! </p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selector = document.querySelector('.selector');
+            const options = selector.querySelectorAll('.option');
+            const highlight = selector.querySelector('.highlight');
+
+            options.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    options.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    highlight.style.transform = `translateX(${index * 100}%)`;
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
