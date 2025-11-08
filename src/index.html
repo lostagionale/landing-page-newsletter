@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,14 +19,14 @@
             <h1> Trova lavoro o lavoratori stagionali in pochi click </h1>
             <p> LoStagionale.it mette in contatto esercenti e lavoratori in modo rapido e gratuito </p>
 
-            <form class="center-flex column">
+            <form id="form" class="center-flex column">
                 <div class="selector center-flex">
                     <div class="highlight"></div>
-                    <button type="button" class="option active">Lavoratore</button>
-                    <button type="button" class="option">Azienda</button>
+                    <button type="button" class="option active" data-role="worker">Lavoratore</button>
+                    <button type="button" class="option" data-role="company">Azienda</button>
                 </div>
 
-                <input type="text" placeholder="Inserisci la tua email" />
+                <input type="email" name="email" placeholder="Inserisci la tua email" required />
                 <button type="submit"> Iscriviti ora gratuitamente </button>
             </form>
 
@@ -34,22 +34,8 @@
         </div>
     </div>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const selector = document.querySelector('.selector');
-            const options = selector.querySelectorAll('.option');
-            const highlight = selector.querySelector('.highlight');
-
-            options.forEach((btn, index) => {
-                btn.addEventListener('click', () => {
-                    options.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    highlight.style.transform = `translateX(${index * 100}%)`;
-                });
-            });
-        });
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+    
 </body>
 </html>
