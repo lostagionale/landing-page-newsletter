@@ -38,7 +38,13 @@ async function handleSubmit(event) {
 
   const { data, error } = await supabaseClient.from('contacts').insert([{ email, role }]);
 
-  if(error) console.error('Errore inserimento:', error);
+  if(error){
+    console.error('Errore inserimento:', error);
+    
+    form.classList.add('hide');
+    document.querySelector('.right p:last-child').classList.add('hide');
+    document.querySelector('.error').style.display = 'block';
+  }
   else{
     console.log('Iscrizione completata con successo!', data);
     form.reset();

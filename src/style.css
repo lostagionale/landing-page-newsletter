@@ -80,6 +80,8 @@ nav{width: 100dvw; height: 100px; position: absolute; top: 0; left: 0;}
 
 .success{display: none; margin-top: 25px; color: var(--primary-color); font-size: 40px !important; font-weight: bold !important;}
 
+.error{display: none; margin-top: 25px; color: var(--primary-color); font-size: 40px !important; font-weight: bold !important;}
+
 /*** RESPONSIVE ***/
 
 @media screen and (max-width: 1600px){
