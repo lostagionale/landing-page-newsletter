@@ -78,6 +78,7 @@ nav{width: 100dvw; height: 100px; position: absolute; top: 0; left: 0;}
 .option.active{color: #fff;}
 .option:active{transform: scale(0.97);}
 
+.success{display: none; margin-top: 25px; color: var(--primary-color); font-size: 40px !important; font-weight: bold !important;}
 
 /*** RESPONSIVE ***/
 

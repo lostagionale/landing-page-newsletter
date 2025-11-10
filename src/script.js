@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.getElementById('form');
     form.addEventListener('submit', handleSubmit);
+    
 });
 
 
@@ -41,5 +42,9 @@ async function handleSubmit(event) {
   else{
     console.log('Iscrizione completata con successo!', data);
     form.reset();
+    
+    form.classList.add('hide');
+    document.querySelector('.right p:last-child').classList.add('hide');
+    document.querySelector('.success').style.display = 'block';
   }
 }
