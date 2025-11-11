@@ -78,9 +78,7 @@ nav{width: 100dvw; height: 100px; position: absolute; top: 0; left: 0;}
 .option.active{color: #fff;}
 .option:active{transform: scale(0.97);}
 
-.success{display: none; margin-top: 25px; color: var(--primary-color); font-size: 40px !important; font-weight: bold !important;}
-
-.error{display: none; margin-top: 25px; color: var(--primary-color); font-size: 40px !important; font-weight: bold !important;}
+.success, .error{display: none; margin-top: 25px; color: var(--primary-color); font-size: 40px !important; font-weight: bold !important;}
 
 /*** RESPONSIVE ***/
 
@@ -91,6 +89,17 @@ nav{width: 100dvw; height: 100px; position: absolute; top: 0; left: 0;}
 @media screen and (max-height: 900px){
     .fixed-modal{margin-top: 50px;}
     .fixed-modal h1{font-size: 2.5em !important;}
+}
+
+@media screen and (min-width: 1250px) and (max-height: 700px){
+    html{padding: 100px 0;}
+    .fixed-modal{height: 100dvh;}
+    .fixed-modal h1{font-size: 2em !important;}
+}
+
+@media screen and (min-width: 1250px) and (max-height: 500px){
+    html{padding-bottom: 200px;}
+    .fixed-modal{height: 125dvh; margin-top: 150px;}
 }
 
 @media screen and (max-width: 1250px){
