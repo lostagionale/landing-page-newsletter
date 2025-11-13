@@ -36,6 +36,28 @@ async function handleSubmit(event) {
     return;
   }
 
+  const { data: existingContacts, error: checkError } = await supabaseClient
+    .from('contacts')
+    .select('email')
+    .eq('email', email)
+    .single();
+
+  if (checkError && checkError.code !== 'PGRST116') {
+    console.error('Errore durante la verifica:', checkError);
+    form.classList.add('hide');
+    document.querySelector('.right p:last-child').classList.add('hide');
+    document.querySelector('.error').style.display = 'block';
+    return;
+  }
+
+  if (existingContacts) {
+    console.log('Email già registrata');
+    form.classList.add('hide');
+    document.querySelector('.right p:last-child').classList.add('hide');
+    document.querySelector('.error').style.display = 'block';
+    return;
+  }
+
   const { data, error } = await supabaseClient.from('contacts').insert([{ email, role }]);
 
   if(error){
